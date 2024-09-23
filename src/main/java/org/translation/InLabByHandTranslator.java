@@ -70,6 +70,9 @@ public class InLabByHandTranslator implements Translator {
         else if ("rs".equals(language)) {
             lan = "Русский";
         }
+        else if ("ben".equals(language)) {
+            lan = "বাংলা";
+        }
         else {
             return null;
         }
