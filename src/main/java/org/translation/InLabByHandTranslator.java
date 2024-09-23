@@ -14,6 +14,7 @@ import java.util.List;
  * the country code "can" to several languages.
  */
 public class InLabByHandTranslator implements Translator {
+    public static final String CANADA = "can";
     /**
      * Returns the language abbreviations for all languages whose translations are
      * available for the given country.
@@ -28,8 +29,6 @@ public class InLabByHandTranslator implements Translator {
         }
         return new ArrayList<>();
     }
-
-    public static final String CANADA = "can";
 
     /**
      * Returns the country abbreviations for all countries whose translations are
@@ -67,6 +66,9 @@ public class InLabByHandTranslator implements Translator {
         }
         else if ("jp".equals(language)) {
             lan = "日本語";
+        }
+        else if ("rs".equals(language)) {
+            lan = "Русский";
         }
         else {
             return null;
