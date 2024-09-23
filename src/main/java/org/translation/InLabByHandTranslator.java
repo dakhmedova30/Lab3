@@ -67,7 +67,7 @@ public class InLabByHandTranslator implements Translator {
         else if ("jp".equals(language)) {
             lan = "日本語";
         }
-        else if ("rs".equals(language)) {
+        else if ("rus".equals(language)) {
             lan = "Русский";
         }
         else if ("ben".equals(language)) {
