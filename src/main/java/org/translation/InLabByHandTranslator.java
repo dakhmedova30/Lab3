@@ -73,6 +73,9 @@ public class InLabByHandTranslator implements Translator {
         else if ("ben".equals(language)) {
             lan = "বাংলা";
         }
+        else if ("ko".equals(language)) {
+            lan = "캐나다";
+        }
         else {
             return null;
         }
