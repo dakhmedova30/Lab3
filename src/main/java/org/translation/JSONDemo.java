@@ -3,6 +3,8 @@ package org.translation;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.security.Key;
+
 /**
  * Example working with JSON data. The data consists of an array with two objects in it.
  * Each object has two key-value pairs in it.
@@ -34,7 +36,8 @@ public class JSONDemo {
      */
     public static String getKeyOneOfSecond(JSONArray jsonArray) {
         // TODO: Complete this method.
-        return "";
+        JSONObject jsonObject = jsonArray.getJSONObject(1);
+        return jsonObject.getString("key1");
     }
 
 }
