@@ -57,16 +57,17 @@ public class JSONTranslationExample {
 
         // Iterate through the jsonArray to find the country that matches the countryCode
 
-        for (int i=0; i < jsonArray.length(); i++) {
+        for (int i = 0; i < jsonArray.length(); i++) {
 
-            // return translation if countryCode is found in "alpha3" of the array
-            if (Objects.equals(countryCode, jsonArray.getJSONObject(i).getString("alpha3"))) {
-                JSONObject countryName = jsonArray.getJSONObject(i);
-                return countryName.getString(languageCode);
+            // initialize the object
+            JSONObject assignedObject = jsonArray.getJSONObject(i);
+
+            // check if countryCode is found in "alpha3" of the array and languageCode is in the object
+            if (Objects.equals(countryCode, assignedObject.getString("alpha3"))
+                    && assignedObject.has(languageCode)) {
+                return assignedObject.getString(languageCode);
             }
-
         }
-
         return "Country not found";
     }
 
