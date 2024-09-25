@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Objects;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -53,6 +54,19 @@ public class JSONTranslationExample {
      * @return the translation of country to the given language or "Country not found" if there is no translation.
      */
     public String getCountryNameTranslation(String countryCode, String languageCode) {
+
+        // Iterate through the jsonArray to find the country that matches the countryCode
+
+        for (int i=0; i < jsonArray.length(); i++) {
+
+            // return translation if countryCode is found in "alpha3" of the array
+            if (Objects.equals(countryCode, jsonArray.getJSONObject(i).getString("alpha3"))) {
+                JSONObject countryName = jsonArray.getJSONObject(i);
+                return countryName.getString(languageCode);
+            }
+
+        }
+
         return "Country not found";
     }
 
