@@ -15,10 +15,7 @@ import java.util.Map;
  */
 public class CountryCodeConverter {
     private static final int COUNTRY_NAME = 0;  // Name of the country
-    private static final int ALPHA2 = 1;  // Alpha 2 code
     private static final int ALPHA3 = 2;  // Alpha 3 code
-    private static final int NUMERIC = 3;  // Numeric Code
-    private static final int DEFAULT = 4;  // The default number of codes/country names
 
     private HashMap<String, String> codeToCountry = new HashMap<>();  // Country Name <-> Code
     private int numCountries = 0;  // Number of countries
@@ -44,18 +41,7 @@ public class CountryCodeConverter {
             numCountries = lines.size() - 1;
 
             for (String line : lines.subList(1, lines.size())) {
-                String[] parts = line.split("\\s+");
-                if (parts.length > DEFAULT) {  // Country name contains spaces
-                    int extra = parts.length - DEFAULT; // Amount of extra words
-
-                    for (int i = 1; i < extra + 1; i++) {  // Concatenate the country name
-                        parts[COUNTRY_NAME] += " " + parts[i];
-                    }
-
-                    parts[ALPHA2] = parts[ALPHA2 + extra];
-                    parts[ALPHA3] = parts[ALPHA3 + extra];
-                    parts[NUMERIC] = parts[NUMERIC + extra];
-                }
+                String[] parts = line.split("\t");
 
                 codeToCountry.put(parts[ALPHA3], parts[COUNTRY_NAME]);
                 codeToCountry.put(parts[COUNTRY_NAME], parts[ALPHA3]);
