@@ -15,8 +15,8 @@ public class CountryCodeConverter {
     private static final int COUNTRY_NAME = 0;
     private static final int ALPHA3 = 2;
 
-    private Map<String, String> codeToCountry = new HashMap<>();
-    private int numCountries;
+    private final Map<String, String> codeToCountry = new HashMap<>();
+    private final int numCountries;
 
     /**
      * Default constructor which will load the country codes from "country-codes.txt"
