@@ -6,16 +6,17 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * This class provides the service of converting country codes to their names.
  */
 public class CountryCodeConverter {
-    private static final int COUNTRY_NAME = 0;  // Name of country
-    private static final int ALPHA3 = 2;  // Alpha 3 code
+    private static final int COUNTRY_NAME = 0;
+    private static final int ALPHA3 = 2;
 
-    private HashMap<String, String> codeToCountry = new HashMap<>();  // Country Name <-> Code
-    private int numCountries = 0;  // Number of countries
+    private Map<String, String> codeToCountry = new HashMap<>();
+    private int numCountries;
 
     /**
      * Default constructor which will load the country codes from "country-codes.txt"
