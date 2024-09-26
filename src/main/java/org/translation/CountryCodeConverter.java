@@ -6,15 +6,12 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-// TODO CheckStyle: Wrong lexicographical order for 'java.util.HashMap' import (remove this comment once resolved) (Complete)
-// Swapped the order of the imports to make alphabetically ordered
 
 /**
  * This class provides the service of converting country codes to their names.
  */
 public class CountryCodeConverter {
-    private static final int COUNTRY_NAME = 0;  // Name of the country
+    private static final int COUNTRY_NAME = 0;  // Name of country
     private static final int ALPHA3 = 2;  // Alpha 3 code
 
     private HashMap<String, String> codeToCountry = new HashMap<>();  // Country Name <-> Code
